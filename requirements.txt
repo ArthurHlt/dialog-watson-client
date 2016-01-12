@@ -1,2 +1,2 @@
-watson-developer-cloud>=0.3.3,<0.4
+watson-developer-cloud==0.3.3
 lxml>=3.5.0

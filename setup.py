@@ -15,9 +15,12 @@ setup(
                  'Topic :: Communications'],
     platforms='ALL',
     install_requires=[
-        'watson-developer-cloud>=0.3.3,<0.4',
+        'watson-developer-cloud==0.3.30.4',
         'lxml>=3.5.0'
     ],
+    extras_require={
+        'XSD': ["lxml>=3.5.0"]
+    },
     package_data={
         'dialog_watson_client': ['WatsonDialogDocument_1.0.xsd']
     },

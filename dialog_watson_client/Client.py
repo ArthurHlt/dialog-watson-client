@@ -3,9 +3,13 @@ from dialog_watson_client.DialogResponse import DialogResponse
 from dialog_watson_client.Profile import Profile
 from dialog_watson_client.exceptions.ExceptionDialogFile import ExceptionDialogFile
 import os
-from lxml import etree
 import pkgutil
 import StringIO
+
+try:
+    from lxml import etree
+except ImportError, e:
+    pass
 
 
 class Client:
@@ -30,6 +34,8 @@ class Client:
             raise ExceptionDialogFile("File '" + file + "' doesn't exist")
 
     def _validate_xml(self, file):
+        if not etree:
+            return
         data = pkgutil.get_data('dialog_watson_client', 'WatsonDialogDocument_1.0.xsd')
         dataIo = StringIO.StringIO(data)
         xsd_doc = etree.parse(dataIo)
