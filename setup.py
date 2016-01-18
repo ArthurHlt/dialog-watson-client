@@ -15,7 +15,7 @@ setup(
                  'Topic :: Communications'],
     platforms='ALL',
     install_requires=[
-        'watson-developer-cloud==0.3.30.4',
+        'watson-developer-cloud>=0.3.3',
         'lxml>=3.5.0'
     ],
     extras_require={

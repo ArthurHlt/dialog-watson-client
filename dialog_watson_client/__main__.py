@@ -32,6 +32,7 @@ def main():
                         required=False)
     parser.add_argument('dialog_file', action='store', nargs=1)
     parser.add_argument('-n', '--name', dest='dialog_name', action='store', help='Dialog name', required=True)
+    parser.add_argument('--clean', dest='clean', action='store_true')
     args = parser.parse_args()
     dialog_file = "".join(args.dialog_file)
     conf = anyconfig.container(defaultConfig)
@@ -49,6 +50,9 @@ def main():
     bconf = bunch.bunchify(conf)
     watsonClient = Client(bconf.user, bconf.password, dialog_file, "".join(args.dialog_name), bconf.url,
                           os.path.dirname(dialog_file) + "/dialog_id_file.txt")
+    if args.clean:
+        watsonClient.clean_dialogs()
+
     resp = watsonClient.start_dialog()
     print ''
     print bcolors.WARNING + "Watson: " + bcolors.OKBLUE + "\n".join(resp.response) + bcolors.ENDC

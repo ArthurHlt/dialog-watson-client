@@ -29,6 +29,14 @@ class Client:
         self.last_response_raw = None
         self.dialog_id = None
 
+    def clean_dialogs(self):
+        dialogs = self.get_dialogs()
+        for dialog in dialogs['dialogs']:
+            self.dialog.delete_dialog(dialog['dialog_id'])
+
+    def get_dialogs(self):
+        return self.dialog.get_dialogs()
+
     def _check_file(self, file):
         if not os.path.exists(file):
             raise ExceptionDialogFile("File '" + file + "' doesn't exist")
