@@ -3,7 +3,7 @@ import os
 
 setup(
     name='dialog-watson-client',
-    version='1.0.1',
+    version='1.0.2',
     packages=['dialog_watson_client', 'dialog_watson_client.exceptions'],
     url='https://github.com/HomeHabbit/dialog-watson-client',
     license='MIT',
