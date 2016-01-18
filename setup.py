@@ -3,7 +3,7 @@ import os
 
 setup(
     name='dialog-watson-client',
-    version='1.0.0',
+    version='1.0.1',
     packages=['dialog_watson_client', 'dialog_watson_client.exceptions'],
     url='https://github.com/HomeHabbit/dialog-watson-client',
     license='MIT',
@@ -16,7 +16,8 @@ setup(
     platforms='ALL',
     install_requires=[
         'watson-developer-cloud>=0.3.3',
-        'lxml>=3.5.0'
+        'lxml>=3.5.0',
+        'anyconfig'
     ],
     extras_require={
         'XSD': ["lxml>=3.5.0"]

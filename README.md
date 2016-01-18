@@ -26,7 +26,8 @@ from dialog_watson_client.Client import Client
 watsonClient = Client('user_watson', 'password_watson', 'file/path/to/dialog', 'your_dialog_name') # this library abstract the registering of dialog (and the update when you cahnge it) and run it, to do that it will store your dialog id in a file called `dialog_id_file.txt`
 watsonClient.start_dialog() # this will create the dialog into watson or update it and run the initialization of the conversation
 
-watsonClient.converse('hi') # talk to the robot, here it will say 'hi' and watson will answered
+resp = watsonClient.converse('hi') # talk to the robot, here it will say 'hi' and watson will answered
+print resp.response # show the response from watson
 watsonClient.get_profile().get_data() # get extracted data from watson in format: [key => value]
 ```
 
