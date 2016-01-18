@@ -17,7 +17,8 @@ setup(
     install_requires=[
         'watson-developer-cloud>=0.3.3',
         'lxml>=3.5.0',
-        'anyconfig'
+        'anyconfig',
+        'bunch'
     ],
     extras_require={
         'XSD': ["lxml>=3.5.0"]
